@@ -1,8 +1,15 @@
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("projectSchema", "root", "santoshini@2000", {
-  host: "localhost",
-  dialect: "mysql",
-});
+require("dotenv").config({});
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.USER,
+  process.env.PASSWORD,
+  {
+    port: process.env.PORT,
+    host: process.env.HOST,
+    dialect: "mysql",
+  }
+);
 
 const connection = () => {
   sequelize

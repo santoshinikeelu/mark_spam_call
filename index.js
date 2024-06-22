@@ -1,8 +1,10 @@
 const express = require("express");
 const { connection } = require("./connection/connection");
 const app = express();
+require("dotenv").config({});
 const PORT = 4444;
 connection();
+
 app.use(express.json());
 const user = require("./routes/user");
 const login = require("./routes/logIn");
