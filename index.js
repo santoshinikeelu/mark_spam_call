@@ -13,6 +13,14 @@ const spam = require("./routes/spam");
 app.get("/", (req, res) => {
   res.send("hello from home route");
 });
+app.get("/health", async (req, res) => {
+  try {
+    await sequelize.authenticate();
+    res.status(200).send("OK");
+  } catch (error) {
+    res.status(500).send("Database connection error");
+  }
+});
 
 app.use("/api/v1/user", user);
 app.use("/api/v1/user", login);

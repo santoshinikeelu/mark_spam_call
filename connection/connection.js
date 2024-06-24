@@ -8,6 +8,9 @@ const sequelize = new Sequelize(
     port: process.env.DB_PORT || 3306,
     host: process.env.HOST,
     dialect: "mysql",
+    dialectOptions: {
+      connectTimeout: 60000,
+    },
   }
 );
 
@@ -21,6 +24,7 @@ const connection = () => {
       console.error("Unable to connect to the database: ", error);
     });
 };
+
 sequelize.sync({ alter: true });
 module.exports = {
   connection,
