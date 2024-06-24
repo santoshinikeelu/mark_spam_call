@@ -12,9 +12,9 @@ const tokenValidation = async function (req, res, next) {
       );
       console.log("llllllllllllllllll", verifyToken);
       if (verifyToken) {
-        req.id = verifyToken._id;
-        let userData = await User.findOne({ _id: verifyToken._id });
-        // console.log('userData', userData)
+        req.id = verifyToken.id;
+        let userData = await User.findOne({ where: {id: verifyToken.id} });
+        console.log('userData', userData)
         if (userData) {
           req.body.userData = userData;
           next();

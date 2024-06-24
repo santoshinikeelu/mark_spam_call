@@ -9,7 +9,7 @@ const sequelize = new Sequelize(
     host: process.env.HOST,
     dialect: "mysql",
     dialectOptions: {
-      connectTimeout: 60000,
+      connectTimeout: 600000,
     },
   }
 );

@@ -17,10 +17,10 @@ module.exports = {
           );
 
           console.log(isMatchPassword, "isfghj");
-
+console.log('first',  user.id)
           if (isMatchPassword) {
             user.password = undefined;
-            token = await jwt.sign({ _id: user._id }, "authenticate");
+            token = await jwt.sign({ id: user.id }, "authenticate");
             console.log(token, "token");
             return {
               status: 200,

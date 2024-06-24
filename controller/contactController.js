@@ -31,7 +31,7 @@ module.exports = {
         };
       }
    console.log('data.userData.id', data.userData.id)
-      data.userId = data.userData.dataValues.id;
+      data.userId = data.userData.id;
       let savedContacts = await Contact.create(data);
       return {
         status: 200,
