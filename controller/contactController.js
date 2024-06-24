@@ -30,21 +30,8 @@ module.exports = {
           data: null,
         };
       }
-    let isexisted = await Contact.findOne({
-        where: {
-          mobile: data.mobile,
-        },
-      });
-
-      if (isexisted) {
-        return {
-          status: 400,
-          success: false,
-          message: "Mobile No. already exist",
-          data: null,
-        };
-      }
-      data.userId = data.userData.id;
+   console.log('data.userData.id', data.userData.id)
+      data.userId = data.userData.dataValues.id;
       let savedContacts = await Contact.create(data);
       return {
         status: 200,

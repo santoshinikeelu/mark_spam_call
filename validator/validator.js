@@ -22,7 +22,7 @@ const isValidEmail = function (Email) {
 
 //Phone Validation
 const isValidMobile = function (phone) {
-  const phoneRegex =/^([0|+[0-9]{1,5})?([7-9][0-9]{9})$/;
+  const phoneRegex =/^([0|+[0-9]{1,5})?([6-9][0-9]{9})$/;
   return phoneRegex.test(phone);
 };
 
