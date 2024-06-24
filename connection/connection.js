@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
   process.env.USER,
   process.env.PASSWORD,
   {
-    port: process.env.PORT,
+    port: process.env.DB_PORT || 3306,
     host: process.env.HOST,
     dialect: "mysql",
   }
